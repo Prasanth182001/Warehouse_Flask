@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% include 'navbar.html' %}
+
+{% block content %}
+<form method="POST">
+    <h1>Add Products</h1>
+    <label>Products :</label>
+    <input type="text" name="a_product" required="" autocomplete="off">
+     <label>Quantity :</label>
+    <input type="text" name="a_quantity" required="" autocomplete="off">
+    <button type="submit">submit</button>
+</form>
+{% endblock %}

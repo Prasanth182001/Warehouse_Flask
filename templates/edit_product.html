@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% include 'navbar.html' %}
+
+{% block content %}
+<form method="POST">
+    <h1>Edit Products</h1>
+    <label>Products :</label>
+    <input type="text" name="e_product" value="{{e_data.P_NAME}}" required="" autocomplete="off">
+     <label>Quantity :</label>
+    <input type="text" name="e_quantity" value="{{e_data.QUANTITY}}" required="" autocomplete="off">
+    <button type="submit">submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% include 'navbar.html' %}
+
+{% block content %}
+<form method="POST">
+    <h1>Add Transfer</h1>
+    <label>Timestamp :</label>
+    <input type="datetime-local" name="a_time" required="" autocomplete="off">
+    <label>From Location :</label>
+    <select name="a_from">
+        {% for d in dt %}
+        <option>{{d.LOCATIONS}}</option>
+        {% endfor %}
+    </select>
+    <label>To Location :</label>
+ <select name="a_to">
+        {% for d in dt %}
+        <option>{{d.LOCATIONS}}</option>
+        {% endfor %}
+    </select>
+    <label>Product :</label>
+    <select name="a_pro">
+        {% for data in datas %}
+        <option>{{data.P_NAME}}</option>
+        {% endfor %}
+    </select>
+    <label>Quantity :</label>
+    <input type="text" name="a_qty" required="" autocomplete="off">
+    <button type="submit">submit</button>
+</form>
+{% endblock %}

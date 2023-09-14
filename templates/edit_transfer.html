@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% include 'navbar.html' %}
+
+{% block content %}
+<div id="con"></div>
+<form method="POST">
+    <h1>Edit Transfer</h1>
+    <label>Timestamp :</label>
+    <input type="datetime-local" name="e_time" value="{{data_t.TIMESTAMP}}" required="" autocomplete="off">
+    <label>From Location :</label>
+    <input type="text" name="e_from" value="{{data_t.FROM_L}}" required="" autocomplete="off">
+    <label>To Location :</label>
+    <input type="text" name="e_to" value="{{data_t.TO_L}}" required="" autocomplete="off">
+    <label>Product :</label>
+    <input type="text" name="e_pro" value="{{data_t.PRODUCT}}" required="" autocomplete="off">
+    <label>Quantity :</label>
+    <input type="text" name="e_qty" value="{{data_t.QUANTITY}}" required="" autocomplete="off">
+    <button type="submit">submit</button>
+</form>
+</div>
+{% endblock %}

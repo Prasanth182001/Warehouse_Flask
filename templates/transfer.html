@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+{% include 'navbar.html' %}
+
+{% block content %}
+<div class="tables">
+
+<h3>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for mess in messages %}
+                {{ mess }}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</h3>
+<h1>Transfers</h1>
+    <a href="{{url_for('add_transfer')}}" class="add">Add</a>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Timestamp</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+  {% for i in t_data %}
+    <tr>
+        <td>{{i.ID}}</td>
+        <td>{{i.TIMESTAMP}}</td>
+        <td>{{i.FROM_L}}</td>
+        <td>{{i.TO_L}}</td>
+        <td>{{i.PRODUCT}}</td>
+        <td>{{i.QUANTITY}}</td>
+        <td><a href="{{url_for('edit_transfer',id=i.ID)}}" class="edit">Edit</a></td>
+        <td><a onclick="return confirm('Are you sure to delete ?')" href="{{url_for('delete_transfer',id=i.ID)}}" class="del">Delete</a></td>
+    </tr>
+  {% endfor %}
+</table>
+</div>
+{% endblock %}
